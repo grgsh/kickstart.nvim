@@ -3,12 +3,12 @@ return {
     'nvim-telescope/telescope-file-browser.nvim',
     dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
     config = function()
-      vim.keymap.set('n', '<leader>fb', require('telescope').extensions.file_browser.file_browser, { desc = '[F]ile [B]rowser' })
-      vim.keymap.set('n', '<leader>fc', function()
+      vim.keymap.set('n', '<leader>tb', require('telescope').extensions.file_browser.file_browser, { desc = '[T]oggle file [B]rowser' })
+      vim.keymap.set('n', '<leader>tf', function()
         require('telescope').extensions.file_browser.file_browser {
           path = '%:p:h',
         }
-      end, { desc = '[F]ile browser [C]urrent directory' })
+      end, { desc = '[T]oggle [F]ile browser for current directory' })
 
       pcall(require('telescope').load_extension, 'file_browser')
     end,
